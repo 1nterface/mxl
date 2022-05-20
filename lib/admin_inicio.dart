@@ -9,7 +9,7 @@ class Admin_Inicio extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.yellow[800],
-        title: Text('Bajafood', style: const TextStyle(color: Colors.white),),
+        title: Text('Baja Food', style: const TextStyle(color: Colors.white),),
       ),
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset : false,

@@ -92,7 +92,7 @@ class gerencia_loginState extends State<gerencia_login> {
       appBar: AppBar(
           backgroundColor: Colors.yellow[800],
           centerTitle: true,
-          title: Text('Bajafood', style: const TextStyle(color: Colors.white))
+          title: Text('Baja Food', style: const TextStyle(color: Colors.white))
       ),
       backgroundColor: Colors.white,
       key: _formKey,

@@ -1325,7 +1325,7 @@ class lista_restaurantesState extends State<lista_restaurantes> {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text("Bienvenido a Bajafood"),
+          title: Text("Bienvenido a Baja Food"),
           backgroundColor: Colors.yellow[800],
         ),
         body: Column(

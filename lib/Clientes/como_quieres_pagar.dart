@@ -749,9 +749,9 @@ class como_quieres_pagarState extends State<como_quieres_pagar> {
                   docReference.set({
                     'visto': 'no',
                     'empresa': widget.product.nombreProducto,
-                    'calle': widget.product.newid,
-                    'colonia': widget.product.direccion,
-                    'numext': widget.product.foto,
+                    'calle': widget.product.formadepago=="[A Domicilio]"?widget.product.newid:"",
+                    'colonia': widget.product.formadepago=="[A Domicilio]"?widget.product.direccion:"",
+                    'numext': widget.product.formadepago=="[A Domicilio]"?widget.product.foto:"",
                     'flete': widget.product.latitud,
                     'tiempodeespera': tiempoo,
                     'tiempodeesperar': tiempoor,
@@ -917,9 +917,9 @@ class como_quieres_pagarState extends State<como_quieres_pagar> {
                   docReference.set({
                     'visto': 'no',
                     'empresa': widget.product.nombreProducto,
-                    'calle': widget.product.newid,
-                    'colonia': widget.product.direccion,
-                    'numext': widget.product.foto,
+                    'calle': widget.product.formadepago=="[A Domicilio]"?widget.product.newid:"",
+                    'colonia': widget.product.formadepago=="[A Domicilio]"?widget.product.direccion:"",
+                    'numext': widget.product.formadepago=="[A Domicilio]"?widget.product.foto:"",
                     'flete': widget.product.latitud,
                     'tiempodeespera': tiempoo,
                     'hora': formattedDate,
@@ -1151,7 +1151,7 @@ class como_quieres_pagarState extends State<como_quieres_pagar> {
       appBar: AppBar(
         backgroundColor: Colors.yellow[800],
         centerTitle: true,
-        title: Text('Bajafood', style: TextStyle(color: Colors.white)),
+        title: Text('Baja Food', style: TextStyle(color: Colors.white)),
       ),
       body: Stack(
         children: <Widget>[

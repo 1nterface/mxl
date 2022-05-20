@@ -732,7 +732,7 @@ class carpinteria_producto_detalleState extends State<carpinteria_producto_detal
         children: <Widget>[
           AlertDialog(
             backgroundColor: Colors.black,
-            title: Text("Reportar pedido a Bajafood", style: TextStyle(color: Colors.black)),
+            title: Text("Reportar pedido a Baja Food", style: TextStyle(color: Colors.black)),
             content: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,

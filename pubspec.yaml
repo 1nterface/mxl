@@ -100,32 +100,20 @@ flutter:
   uses-material-design: true
 
   assets:
-    - images/logomiperrofeliz.png
-    - images/perro1.jpeg
-    - images/bannercon1.jpg
-    - images/bannercon2.jpg
-    - images/bannercon3.jpg
-    - images/bannercon4.jpg
-    - images/bannercon5.jpg
-    - images/banner1.jpg
-    - images/banner2.jpg
-    - images/banner3.jpg
-    - images/hueso.png
-    - images/silueta2.png
-    - images/logochico.png
-    - images/perro1.jpg
-    - images/perro2.jpg
-    - images/perro3.jpg
-    - images/perro4.jpg
-    - images/ss1.png
-    - images/ss2.png
-    - images/ss3.png
-    - images/septiembre.jpeg
-    - images/octubre.jpeg
-    - images/diciembre.jpeg
-    - images/enero.jpeg
-    - images/febrero.jpeg
-
+    - images/llantera_diaz.png
+    - images/onelooklogo.png
+    - images/call-center.png
+    - images/delivery.png
+    - images/card.png
+    - images/credit.png
+    - images/dish.png
+    - images/repartamos.png
+    - images/hamburguer.png
+    - images/taco.png
+    - images/pizza.png
+    - images/sushi.png
+    - images/wing.png
+    - images/ancestral.jpg
 
 
 

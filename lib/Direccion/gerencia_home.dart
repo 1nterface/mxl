@@ -146,7 +146,7 @@ class gerencia_homeState extends State<gerencia_home> with SingleTickerProviderS
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.yellow[800],
-        title: Text("Bajafood"),
+        title: Text("Baja Food"),
         bottom: TabBar(
           controller: controller,
           tabs: <Widget>[

@@ -320,7 +320,7 @@ class _comprar_ahoraState extends State<comprar_ahora> {
       appBar: AppBar(
         backgroundColor: Colors.yellow[800],
         centerTitle: true,
-        title: Text('Pago Bajafood', style: TextStyle(color: Colors.white)),
+        title: Text('Pago Baja Food', style: const TextStyle(color: Colors.white)),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -556,6 +556,7 @@ class _comprar_ahoraState extends State<comprar_ahora> {
                           });
 
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => como_quieres_pagar(nota_modelo("", widget.product.direccion, widget.product.folio,0, _calle.text, colonia, widget.product.totalNota, tipodepago.toString(),flete,0,widget.product.foto, _numext.text,tipodepago.toString()))),);  
+
 
                           //Navigator.of(context).pushNamed("/como_quieres_pagar");
 

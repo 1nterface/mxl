@@ -1403,12 +1403,12 @@ class carpinteriaState extends State<carpinteria> {
                     onTap: () async{
 
                       documents["estado3"] == "CANCELADO"?
-                      await Navigator.push(context, MaterialPageRoute(builder: (context) => carpinteria_producto_detalle(cajas_modelo2("", "nombreProducto", documents["estadoc"],documents["folio"], 2,2, 0,0, documents["concepto"], documents["estado3"], "Cancelado", "tel", documents["newid"], 0.0, documents["latitud"], documents["longitud"], "empresa"))),)
+                      await Navigator.push(context, MaterialPageRoute(builder: (context) => carpinteria_producto_detalle(cajas_modelo2("", documents["nombrecliente"], documents["estadoc"],documents["folio"], 2,2, 0,0, documents["concepto"], documents["estado3"], documents["calle"]+""+documents["numext"]+"Cancelado"+documents["colonia"], "tel", documents["newid"], 0.0, 0.0, 0.0, documents["empresa"]))),)
                       :
-                      documents["estado3"] == "PEDIDO A RECOGER"?
-                      await Navigator.push(context, MaterialPageRoute(builder: (context) => carpinteria_producto_detalle(cajas_modelo2("", documents["nombrecliente"], documents["estadoc"],documents["folio"], 2,2, 0,0, documents["concepto"], documents["estado3"], "Recoleccion", "tel", documents["newid"], 0.0, documents["latitud"], documents["longitud"], "empresa"))),)
+                      documents["estadoc"] == "recoger"?
+                      await Navigator.push(context, MaterialPageRoute(builder: (context) => carpinteria_producto_detalle(cajas_modelo2("", documents["nombrecliente"], documents["estadoc"],documents["folio"], 2,2, 0,0, documents["concepto"], documents["estado3"], documents["calle"]+""+documents["numext"]+"Recolección"+documents["colonia"], "tel", documents["newid"], 0.0, 0.0, 0.0, documents["empresa"]))),)
                           :
-                      await Navigator.push(context, MaterialPageRoute(builder: (context) => carpinteria_producto_detalle(cajas_modelo2("", "nombreProducto", documents["estadoc"],documents["folio"], 2,2, 0,0, documents["concepto"], documents["estado3"], "Cancelado", "tel", documents["newid"], 0.0, documents["latitud"], documents["longitud"], "empresa"))),);
+                      await Navigator.push(context, MaterialPageRoute(builder: (context) => carpinteria_producto_detalle(cajas_modelo2("", documents["nombrecliente"], documents["estadoc"],documents["folio"], 2,2, 0,0, documents["concepto"], documents["estado3"], documents["calle"]+" #"+documents["numext"]+", "+documents["colonia"], documents["tel"], documents["newid"], 0.0, 0.0, 0.0, documents["empresa"]))),);
 
                     },
                     child: Card(
@@ -1565,11 +1565,13 @@ class carpinteriaState extends State<carpinteria> {
                     },
                     onTap: () async{
 
-                      documents["estado3"] == "PEDIDO A RECOGER"?
-                      await Navigator.push(context, MaterialPageRoute(builder: (context) => carpinteria_producto_detalle(cajas_modelo2("", documents["nombrecliente"], documents["estadoc"],documents["folio"], 2,2, 0,0, documents["concepto"], documents["estado3"], "Recoleccion", "tel", documents["newid"], 0.0, documents["latitud"], documents["longitud"], "empresa"))),)
+                      documents["estado3"] == "CANCELADO"?
+                      await Navigator.push(context, MaterialPageRoute(builder: (context) => carpinteria_producto_detalle(cajas_modelo2("", documents["nombrecliente"], documents["estadoc"],documents["folio"], 2,2, 0,0, documents["concepto"], documents["estado3"], documents["calle"]+""+documents["numext"]+"Cancelado"+documents["colonia"], "tel", documents["newid"], 0.0, 0.0, 0.0, documents["empresa"]))),)
                           :
-                      await Navigator.push(context, MaterialPageRoute(builder: (context) => carpinteria_producto_detalle(cajas_modelo2("", "nombreProducto", documents["estadoc"],documents["folio"], 2,2, 0,0, documents["concepto"], documents["estado3"], documents["calle"]+" #"+documents["numext"]+", "+documents["colonia"], "tel", documents["newid"], 0.0, documents["latitud"], documents["longitud"], "empresa"))),);
-
+                      documents["estadoc"] == "recoger"?
+                      await Navigator.push(context, MaterialPageRoute(builder: (context) => carpinteria_producto_detalle(cajas_modelo2("", documents["nombrecliente"], documents["estadoc"],documents["folio"], 2,2, 0,0, documents["concepto"], documents["estado3"], documents["calle"]+""+documents["numext"]+"Recolección"+documents["colonia"], "tel", documents["newid"], 0.0, 0.0, 0.0, documents["empresa"]))),)
+                          :
+                      await Navigator.push(context, MaterialPageRoute(builder: (context) => carpinteria_producto_detalle(cajas_modelo2("", documents["nombrecliente"], documents["estadoc"],documents["folio"], 2,2, 0,0, documents["concepto"], documents["estado3"], documents["calle"]+" #"+documents["numext"]+", "+documents["colonia"], documents["tel"], documents["newid"], 0.0, 0.0, 0.0, documents["empresa"]))),);
                       FirebaseFirestore.instance.collection('Pedidos_Jimena').doc(documents["newid"]).update({
                         'visto': 'si',
                         'estado': 'Por Finalizar',
@@ -1730,11 +1732,13 @@ class carpinteriaState extends State<carpinteria> {
                     },
                     onTap: () async{
 
-                      documents["estado3"] == "PEDIDO A RECOGER"?
-                      await Navigator.push(context, MaterialPageRoute(builder: (context) => carpinteria_producto_detalle(cajas_modelo2("", documents["nombrecliente"], documents["estadoc"],documents["folio"], 2,2, 0,0, documents["concepto"], documents["estado3"], "Recoleccion", "tel", documents["newid"], 0.0, documents["latitud"], documents["longitud"], "empresa"))),)
+                      documents["estado3"] == "CANCELADO"?
+                      await Navigator.push(context, MaterialPageRoute(builder: (context) => carpinteria_producto_detalle(cajas_modelo2("", documents["nombrecliente"], documents["estadoc"],documents["folio"], 2,2, 0,0, documents["concepto"], documents["estado3"], documents["calle"]+""+documents["numext"]+"Cancelado"+documents["colonia"], "tel", documents["newid"], 0.0, 0.0, 0.0, documents["empresa"]))),)
                           :
-                      await Navigator.push(context, MaterialPageRoute(builder: (context) => carpinteria_producto_detalle(cajas_modelo2("", "nombreProducto", documents["estadoc"],documents["folio"], 2,2, 0,0, documents["concepto"], documents["estado3"], documents["calle"]+" #"+documents["numext"]+", "+documents["colonia"], "tel", documents["newid"], 0.0, documents["latitud"], documents["longitud"], "empresa"))),);
-
+                      documents["estadoc"] == "recoger"?
+                      await Navigator.push(context, MaterialPageRoute(builder: (context) => carpinteria_producto_detalle(cajas_modelo2("", documents["nombrecliente"], documents["estadoc"],documents["folio"], 2,2, 0,0, documents["concepto"], documents["estado3"], documents["calle"]+""+documents["numext"]+"Recolección"+documents["colonia"], "tel", documents["newid"], 0.0, 0.0, 0.0, documents["empresa"]))),)
+                          :
+                      await Navigator.push(context, MaterialPageRoute(builder: (context) => carpinteria_producto_detalle(cajas_modelo2("", documents["nombrecliente"], documents["estadoc"],documents["folio"], 2,2, 0,0, documents["concepto"], documents["estado3"], documents["calle"]+" #"+documents["numext"]+", "+documents["colonia"], documents["tel"], documents["newid"], 0.0, 0.0, 0.0, documents["empresa"]))),);
                       FirebaseFirestore.instance.collection('Pedidos_Jimena').doc(documents["newid"]).update({
                         'visto': 'si',
                         'estado': 'Recibido',
@@ -1937,7 +1941,7 @@ class carpinteriaState extends State<carpinteria> {
           ),
           centerTitle: true,
           backgroundColor: Colors.yellow[800],
-          title: Text("Bajafood"),
+          title: Text("Baja Food"),
         ),
         //floatingActionButton: FloatingActionButton(
           //backgroundColor: Colors.black,

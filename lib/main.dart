@@ -104,7 +104,7 @@ class MyApp extends StatelessWidget {
 
 
       },
-      title: 'Socio Bajafood',
+      title: 'Baja Food',
       theme: ThemeData(
 
       ),

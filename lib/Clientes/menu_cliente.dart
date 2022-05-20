@@ -88,7 +88,7 @@ class menu_clienteState extends State<menu_cliente> {
               data['notificacion'] != "0"?
 
               Badge(
-                position: BadgePosition(top: 30, bottom: 35),
+                position: BadgePosition(top: 20, end: 20),
                 badgeColor: Colors.red,
                 badgeContent: Text(data["notificacion"], style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20),),
                 child: FloatingActionButton(
@@ -344,7 +344,7 @@ class menu_clienteState extends State<menu_cliente> {
                         final sucursal = prefs4.getString('sucursal') ?? "";
                         final servicio = prefs4.getString('servicio') ?? "";
 
-                        await Navigator.push(context, MaterialPageRoute(builder: (context) => comprar_ahora(nota_modelo("", "", folio,0,"newid",widget.empresa, totalreal, "sucursal",0,0,servicio, widget.correoEmpresa,""))),);
+                        await Navigator.push(context, MaterialPageRoute(builder: (context) => comprar_ahora(nota_modelo("", "", folio,0, _isChecked2.toString(),widget.empresa, totalreal, _isChecked.toString(),0,0,servicio, widget.correoEmpresa,tipodepago.toString()))),);
 
                         print("Dr. House "+widget.empresa);
                       },
@@ -604,9 +604,8 @@ class menu_clienteState extends State<menu_cliente> {
                                 //countDocuments();
                                 //Navigator.of(context).pop();
                                 _cantidadDeProducto.clear();
-                                Toast.show("¡Agregado exitosamente!", duration: Toast.lengthLong, gravity:  Toast.center);
+                                //Toast.show("¡Agregado exitosamente!", duration: Toast.lengthLong, gravity:  Toast.center);
 
-                                Navigator.of(context).pop();
 
                                 //BLOQUE DE CODIGO PARA NOTIFICACION PARA COMPRAS EN CARRITO
                                 QuerySnapshot _myDocE = await FirebaseFirestore.instance.collection('Pedidos_Jimena_Interna').where('correocliente', isEqualTo: correoPersonal).where('folio', isEqualTo: _myDocCount.length+1).get();
@@ -621,6 +620,9 @@ class menu_clienteState extends State<menu_cliente> {
 
                                 SharedPreferences preferences = await SharedPreferences.getInstance();
                                 await preferences.remove('totalProducto');
+
+                                Navigator.of(context).pop();
+
                               },
                             ),
                           ),
@@ -657,7 +659,7 @@ class menu_clienteState extends State<menu_cliente> {
   late List<String> tipodepago = [""];
   bool _isChecked = false, _isChecked2 = false, _isChecked3 = false;
   List<String> text = ["Recoger en establecimiento"];
-  List<String> text2 = ["A Domicilio"];
+  List<String> text2 = ["A Domicilio"];//
 
   Widget recoger (BuildContext context){
     return StreamBuilder<DocumentSnapshot<Object?>>(
@@ -685,6 +687,10 @@ class menu_clienteState extends State<menu_cliente> {
 
                     final prefs = await SharedPreferences.getInstance();
                     prefs.setString('servicio', text.toString());
+
+                    prefs.setString('_isChecked2', _isChecked2.toString());
+                    prefs.setString('_isChecked', _isChecked.toString());
+                    prefs.setString('tipoPago', tipodepago.toString());
 
                     setState(() {
                       print("no palomita");
@@ -738,15 +744,20 @@ class menu_clienteState extends State<menu_cliente> {
 
 
                     //final prefs2 = await SharedPreferences.getInstance();
-                    //correoresta = prefs2.getString('correoresta') ?? "";
+                    //var _isChecked2s = prefs2.getString('_isChecked2') ?? "";
+                    //var _isCheckeds = prefs2.getString('_isCheckeds') ?? "";
+                    //var _tipoDePago = prefs2.getString('_tipoDePago') ?? "";
 
                     final prefs = await SharedPreferences.getInstance();
-                    prefs.setString('servicio', text2.toString());
+
 
                     setState(() {
                       _isChecked2 = val!;
                       if(_isChecked2 == true){
                         setState(()  {
+                          prefs.setString('_isChecked2', _isChecked2.toString());
+                          prefs.setString('_isChecked', _isChecked.toString());
+                          prefs.setString('tipoPago', tipodepago.toString());
                           tipodepago = text2;
                           _isChecked3 = false;
                           _isChecked = false;
@@ -811,7 +822,7 @@ class menu_clienteState extends State<menu_cliente> {
                   children: [
                     _isChecked == true?
                     widget.tarjeta == "si"?
-                    Text("Aceptamos tarjeta de debito", style: TextStyle(color: Colors.yellow[800]))
+                    Text("Aceptamos tarjeta de debito", style: TextStyle(color: Colors.orange[800]))
                         :
                     Text("Solo aceptamos efectivo", style: TextStyle(color: Colors.yellow[800]))
                         :
