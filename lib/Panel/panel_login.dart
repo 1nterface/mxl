@@ -58,9 +58,9 @@ class panel_loginState extends State<panel_login> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.red[800],
+          backgroundColor: Colors.yellow[800],
           centerTitle: true,
-          title: Text('Panel Pizzeria Demo', style: TextStyle(color: Colors.white),)
+          title: Text('Panel Baja Food', style: TextStyle(color: Colors.white),)
       ),
       backgroundColor: Colors.white,
       key: _formKey,

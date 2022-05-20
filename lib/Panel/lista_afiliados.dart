@@ -848,8 +848,8 @@ class lista_afiliadosState extends State<lista_afiliados> {
         ),
         appBar: AppBar(
           centerTitle: true,
-          title: Text("Panel Pizzeria Demo"),
-          backgroundColor: Colors.red[800],
+          title: Text("Panel Baja Food"),
+          backgroundColor: Colors.yellow[800],
         ),
         body: Column(
           children: [
