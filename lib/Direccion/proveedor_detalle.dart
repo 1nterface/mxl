@@ -99,43 +99,7 @@ class proveedor_detalleState extends State<proveedor_detalle> {
               ),
 
               SizedBox(height: 20,),
-              Container(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child:  OutlineButton(
-                    onPressed: () async {
 
-                      QuerySnapshot _myDoc = await FirebaseFirestore.instance.collection('Proveedores').orderBy('folio').get();
-                      List<DocumentSnapshot> _myDocCount = _myDoc.docs;
-
-                      final collRef = FirebaseFirestore.instance.collection('Proveedores');
-                      DocumentReference docReference = collRef.doc();
-
-                      var now = DateTime.now();
-
-                      docReference.set({
-                        'folio': _myDocCount.length+1,
-                        'newid': docReference.id,
-                        'id': "987",
-                        'nombreProducto': _nombre.text,
-                        'miembrodesde': '${now.year}-${now.month}-${now.day}',
-                        //'total': 0.00,
-                      });
-
-                      _nombre.clear();
-
-                      Navigator.pop(context);
-
-                    },
-                    child: SizedBox(
-                      width: 300,
-                      child: Text('Registrar proveedor', textAlign: TextAlign.center,),
-                    ),
-                    borderSide: BorderSide(color: Colors.red),
-                    shape: StadiumBorder(),
-                  ),
-                ),
-              ),
               SizedBox(height: 20,),
             ],
           ),

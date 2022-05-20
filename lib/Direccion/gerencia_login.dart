@@ -186,21 +186,26 @@ class gerencia_loginState extends State<gerencia_login> {
                       height: 470, //Posicion de boton ENTRAR en la pantalla
                       child: Align(
                         alignment: Alignment.bottomCenter,
-                        child:  OutlineButton(
+                        child:
+
+                        OutlinedButton(
                           onPressed: () async {
 
-                            num();
-                            inicioSesion();
-                            //Navigator.of(context).pushNamed('/encargado_home');
+                            if (_formKey.currentState!.validate()) {
+                              num();
+                              inicioSesion();                            }
+
                           },
-                          child: SizedBox(
-                            width: 300,
-                            child: Text('ENTRAR', textAlign: TextAlign.center,),
+                          child: Text(
+                            "ENTRAR",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                //fontSize: 14,
+                                color: Colors.white),
                           ),
-                          borderSide: BorderSide(color: Colors.black,
-                          ),
-                          shape: StadiumBorder(),
+                          style: OutlinedButton.styleFrom(backgroundColor: Colors.yellow[800]),
                         ),
+
                       ),
                     ),
                   ),

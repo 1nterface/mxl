@@ -258,77 +258,7 @@ class alta_coloniasState extends State<alta_colonias> {
                 ),
               ),
               SizedBox(height: 20),
-              Container(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child:  OutlineButton(
-                    onPressed: () async {
 
-                      QuerySnapshot _myDoc = await FirebaseFirestore.instance.collection('Pedidos_Jimena').orderBy('folio').get();
-                      List<DocumentSnapshot> _myDocCount = _myDoc.docs;
-
-                      final collRef = FirebaseFirestore.instance.collection('Pedidos_Jimena');
-                      DocumentReference docReference = collRef.doc();
-
-                      DateTime now = DateTime.now();
-                      String formattedDate = DateFormat('kk:mm:ss').format(now);
-
-                      int celular = int.parse(_celular.text);
-                      int numero = int.parse(_numero.text);
-
-
-                      docReference.set({
-
-                        //AWEBO ABRIR VENTANA PARA PREGUNTAR
-                        // SPINNER TIPO DE RESCATE, NOMBRE DE CLIENTE, DIRECCION, CELULAR
-                        // TAMBIEN REVISAR POR QUE AL ASIGNAR UN RESCATE, VUELVES A ENTRAR A VER
-                        // LA NOTA Y TE APARECE LA NOTA DE PEDIDO..QUITAR ESO POR QUE NO SIRVE.
-                        'hora': formattedDate,
-                        'calle': _calle.text,
-                        'concepto': "",
-                        'colonia': _colonia.text,
-                        'numero': numero,
-                        'celular': celular,
-                        'servicio': category,
-                        'folio': _myDocCount.length+1,
-                        'newid': docReference.id,
-                        'id': "987",
-                        'nombreProducto': _myDocCount.length+1,
-                        'nombrecliente': _nombre.text,
-                        'miembrodesde': DateFormat("dd-MM-yyyy").format(now),
-                        'repartidor': 'Nadie',
-                        'estado': 'rescatesolicitado',
-                        'estado3': 'PEDIDO LOCAL',
-                        'estado2': 'pedidoEnEspera',
-                        'totalNota': 0.00,
-                        'tipodepago': "Ninguno",
-                        'transitopendiente': "",
-                        'encamino': "",
-                        'ensitio': "",
-                        'finalizo': "",
-                        'visto': "no",
-                      });
-
-                      _calle.clear();
-                      _colonia.clear();
-                      _nombre.clear();
-                      _celular.clear();
-                      _numero.clear();
-
-
-                      Navigator.pop(context);
-                      Navigator.pop(context);
-
-                    },
-                    child: SizedBox(
-                      width: 300,
-                      child: Text('Guardar RESCATE', textAlign: TextAlign.center,),
-                    ),
-                    borderSide: BorderSide(color: Colors.red),
-                    shape: StadiumBorder(),
-                  ),
-                ),
-              ),
               SizedBox(height: 20,),
             ],
           ),
@@ -534,7 +464,8 @@ class alta_coloniasState extends State<alta_colonias> {
               Container(
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child:  OutlineButton(
+                  child:
+                  OutlinedButton(
                     onPressed: () async {
 
                       final FirebaseAuth auth = FirebaseAuth.instance;
@@ -584,14 +515,15 @@ class alta_coloniasState extends State<alta_colonias> {
 
 
                       Navigator.pop(context);
-
                     },
-                    child: SizedBox(
-                      width: 300,
-                      child: Text('Aceptar', textAlign: TextAlign.center,),
+                    child: Text(
+                      "ACEPTAR",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          //fontSize: 14,
+                          color: Colors.white),
                     ),
-                    borderSide: BorderSide(color: Colors.black),
-                    shape: StadiumBorder(),
+                    style: OutlinedButton.styleFrom(backgroundColor: Colors.yellow[800]),
                   ),
                 ),
               ),
@@ -623,24 +555,7 @@ class alta_coloniasState extends State<alta_colonias> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Container(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child:  OutlineButton(
-                    onPressed: () async {
 
-                      showDialog(context: context, builder: (BuildContext context) =>  altaNuevaNota(context));
-
-                    },
-                    child: SizedBox(
-                      width: 300,
-                      child: Text('Confirmar nueva nota', textAlign: TextAlign.center,),
-                    ),
-                    borderSide: BorderSide(color: Colors.red),
-                    shape: StadiumBorder(),
-                  ),
-                ),
-              ),
               SizedBox(height: 20,),
             ],
           ),

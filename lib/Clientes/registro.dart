@@ -388,22 +388,28 @@ class registroState extends State<registro> {
                   child: Container(
                     child: Align(
                       alignment: Alignment.bottomCenter,
-                      child:  OutlineButton(
+                      child:
+
+                      OutlinedButton(
                         onPressed: () async {
 
                           if (_formKey.currentState!.validate()) {
-                            _startUploadTask();
-                          }
-
+                            if (_formKey.currentState!.validate()) {
+                              _startUploadTask();
+                            }                           }
 
                         },
-                        child: SizedBox(
-                          width: 300,
-                          child: Text('Registrar informacion', textAlign: TextAlign.center,),
+                        child: Text(
+                          "REGISTRAR INFORMACION",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              //fontSize: 14,
+                              color: Colors.white),
                         ),
-                        borderSide: BorderSide(color: Colors.black),
-                        shape: StadiumBorder(),
+                        style: OutlinedButton.styleFrom(backgroundColor: Colors.yellow[800]),
                       ),
+
+
                     ),
                   ),
                 ),

@@ -140,26 +140,7 @@ class pedidosState extends State<pedidos> {
                 ),
               ),
               SizedBox(height: 20),
-              Container(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child:  OutlineButton(
-                    onPressed: () async {
 
-                      FirebaseFirestore.instance.collection('Clave').doc("clave").update({'clave': _tel.text});
-                      //_crearCodigo(context);
-                      Navigator.pop(context);
-
-                    },
-                    child: SizedBox(
-                      width: 300,
-                      child: Text('Guardar clave nueva', textAlign: TextAlign.center,),
-                    ),
-                    borderSide: BorderSide(color: Colors.red),
-                    shape: StadiumBorder(),
-                  ),
-                ),
-              ),
               SizedBox(height: 20,),
             ],
           ),
@@ -518,41 +499,7 @@ class pedidosState extends State<pedidos> {
                 ),
               ),
               SizedBox(height: 20),
-              Container(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child:  OutlineButton(
-                    onPressed: () async {
 
-
-                      final collRef = FirebaseFirestore.instance.collection('Servicios');
-                      DocumentReference docReference = collRef.doc();
-
-                      var now = DateTime.now();
-                      double costo = double.parse(_costo.text);
-
-                      docReference.set({
-                        'newid': docReference.id,
-                        'id': "987",
-                        "servicio" : _servicio.text,
-                        "costoProducto": costo,
-                      });
-                      _servicio.clear();
-                      _costo.clear();
-                      //_crearCodigo(context);
-                      Navigator.pop(context);
-
-                    },
-                    child: SizedBox(
-                      width: 300,
-                      child: Text('Guardar servicio', textAlign: TextAlign.center,),
-                    ),
-                    borderSide: BorderSide(color: Colors.red),
-                    shape: StadiumBorder(),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20,),
             ],
           ),
           actions: <Widget>[

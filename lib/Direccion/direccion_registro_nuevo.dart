@@ -114,14 +114,6 @@ class direccion_registro_nuevoState extends State<direccion_registro_nuevo> {
     var contra = _contrasena.text.toLowerCase();
     var contrav = _contrasenav.text.toLowerCase();
 
-    final position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.bestForNavigation);
-    //print(position.latitude.toDouble());
-    //print(position.longitude.toDouble());
-    var lat = position.latitude.toDouble();
-    var lon = position.longitude.toDouble();
-    print("Lat: "+lat.toString());
-    print("Lon"+lon.toString());
-
     var now = DateTime.now();
     final collRef = FirebaseFirestore.instance.collection('Socios_Registro').doc(correo);
 
@@ -135,8 +127,8 @@ class direccion_registro_nuevoState extends State<direccion_registro_nuevo> {
       'categoria': categorr,
       'entrada': entrada,
       'salida': salida,
-      'latitud': lat,
-      'longitud': lon,
+      //'latitud': lat,
+      //'longitud': lon,
       //'ciudad': ciudad2,
       'calle': _calle.text,
       'numero': _num.text,

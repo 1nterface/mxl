@@ -225,23 +225,24 @@ class clientes_loginState extends State<clientes_login> {
                       height: 470, //Posicion de boton ENTRAR en la pantalla
                       child: Align(
                         alignment: Alignment.bottomCenter,
-                        child:  OutlineButton(
+                        child: OutlinedButton(
                           onPressed: () async {
 
                             if (_formKey.currentState!.validate()) {
                               inicioSesion();
                             }
-                            //num();
 
                           },
-                          child: SizedBox(
-                            width: 300,
-                            child: Text('ENTRAR', textAlign: TextAlign.center,),
+                          child: Text(
+                            "ENTRAR",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                //fontSize: 14,
+                                color: Colors.white),
                           ),
-                          borderSide: BorderSide(color: Colors.black,
-                          ),
-                          shape: StadiumBorder(),
+                          style: OutlinedButton.styleFrom(backgroundColor: Colors.yellow[800]),
                         ),
+
                       ),
                     ),
                   ),
